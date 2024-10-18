@@ -49,16 +49,17 @@
         }
 
         .product-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Always three columns */
-            gap: 10px 20px; /* Reduce vertical gap to 10px and maintain horizontal gap */
-            padding: 20px;
-            flex-grow: 1;
-            width: 100%;
-            max-width: 1200px; /* Optional: Set a max-width */
-            margin: 0 auto; /* Center the grid */
-            overflow: hidden; /* Prevent overflow */
-        }
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Always three columns */
+    gap: 10px 20px; /* Set vertical gap to 10px and horizontal gap to 20px */
+    padding: 20px;
+    flex-grow: 1;
+    width: 100%;
+    max-width: 1200px; /* Optional: Set a max-width */
+    margin: 0 auto; /* Center the grid */
+    overflow: hidden; /* Prevent overflow */
+}
+
 
         .product {
             background-color: white;
@@ -120,7 +121,8 @@
         /* Responsive styles */
         @media (max-width: 768px) {
             .product-grid {
-                grid-template-columns: repeat(3, 1fr); /* Maintain three columns */
+                grid-template-columns: repeat(2, 1fr); /* Adjust to two columns for mobile */
+                gap: 5px; /* Set a smaller gap for mobile */
             }
 
             .product {
