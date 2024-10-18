@@ -7,132 +7,117 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <title>Product Enquiry - PHSPL</title>
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #f4f4f4;
-}
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
 
-header {
-    text-align: center;
-    background: linear-gradient(45deg, #007bff, #6610f2);
-    color: white;
-    padding: 20px 0;
-}
+        header {
+            text-align: center;
+            background: linear-gradient(45deg, #007bff, #6610f2);
+            color: white;
+            padding: 20px 0;
+        }
 
-.header-logo h1 {
-    font-size: 2.5rem;
-}
+        .header-logo h1 {
+            font-size: 2.5rem;
+        }
 
-.header-title h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
+        .header-title h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
 
-.header-title p {
-    margin-bottom: 10px;
-}
+        .header-title p {
+            margin-bottom: 10px;
+        }
 
-.header-title .view-more {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-}
+        .header-title .view-more {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three columns for larger screens */
-    gap: 20px;
-    padding: 20px;
-    flex-grow: 1;
-    width: 100%; /* Set width to 100% */
-    max-width: 1200px; /* Optional: Set a max-width to prevent excessive stretching */
-    margin: 0 auto; /* Center the grid */
-}
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Always three columns */
+            gap: 20px;
+            padding: 20px;
+            flex-grow: 1;
+            width: 100%;
+            max-width: 1200px; /* Optional: Set a max-width */
+            margin: 0 auto; /* Center the grid */
+            overflow: hidden; /* Prevent overflow */
+        }
 
-.product {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 15px;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
+        .product {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
 
-.product img {
-    width: 100px; /* Keep the size consistent */
-    height: 100px;
-    margin-bottom: 10px;
-}
+        .product img {
+            width: 100px; /* Keep the size consistent */
+            height: 100px;
+            margin-bottom: 10px;
+        }
 
-.product p {
-    font-size: 1rem;
-}
+        .product p {
+            font-size: 1rem;
+        }
 
-.product:hover {
-    transform: scale(1.05);
-}
+        .product:hover {
+            transform: scale(1.05);
+        }
 
-/* Responsive adjustments for mobile devices */
-@media (max-width: 768px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
-        padding: 10px; /* Reduce padding for smaller screens */
-    }
-}
+        footer {
+            background-color: #007bff;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
 
-@media (max-width: 480px) {
-    .product-grid {
-        grid-template-columns: repeat(1, 1fr); /* Single column for mobile */
-        padding: 5px; /* Further reduce padding */
-    }
-}
+        .footer-btn {
+            background-color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center; /* Align items vertically */
+        }
 
-footer {
-    background-color: #007bff;
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
+        .footer-btn i {
+            margin-right: 5px; /* Space between icon and text */
+        }
 
-.footer-btn {
-    background-color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center; /* Align items vertically */
-}
+        .footer-btn:hover {
+            transform: scale(1.1);
+        }
 
-.footer-btn i {
-    margin-right: 5px; /* Space between icon and text */
-}
+        .footer-btn:active {
+            transform: scale(1.2);
+        }
 
-.footer-btn:hover {
-    transform: scale(1.1);
-}
-
-.footer-btn:active {
-    transform: scale(1.2);
-}
-
-</style>
-
+    </style>
 </head>
 <body>
     <header>
@@ -144,7 +129,7 @@ footer {
         </div>
     </header>
 
-    <section class="product-grid" style="padding-bottom: 80px;">
+    <section class="product-grid">
         <!-- TMT BARS -->
         <div class="product-item">
             <a href="tmt-bars/tata-tisocn-550-sd-tmt-bars/" style="text-decoration: none; color: inherit;">
@@ -235,8 +220,6 @@ footer {
             </a>
         </div>
     </section>
-    
-    
 
     <footer>
         <button class="footer-btn" id="catalogue-btn">
@@ -257,61 +240,14 @@ footer {
     </footer>
 
     <script>
-
         // JS for button click animations
         const footerButtons = document.querySelectorAll('.footer-btn');
 
         footerButtons.forEach(button => {
             button.addEventListener('click', () => {
-                button.classList.add('clicked');
-                setTimeout(() => {
-                    button.classList.remove('clicked');
-                }, 300);
+                alert(`You clicked the ${button.innerText} button!`);
             });
         });
-// Function to handle both absolute and relative URLs
-function navigateTo(url) {
-    // If the URL does not start with 'http://' or 'https://', it's considered relative
-    if (!/^https?:\/\//i.test(url)) {
-        // Ensure the URL starts from the root of the current website (using window.location.origin)
-        url = window.location.origin + '/' + url;
-    }
-    // Redirect to the target URL
-    window.location.href = url;
-}
-
-// Example usage for product grid items
-document.querySelectorAll('.product').forEach(item => {
-    item.addEventListener('click', function() {
-        const url = this.getAttribute('data-url'); // Get URL from a data attribute
-        navigateTo(url);
-    });
-});
-
-// Assign URLs to the products using 'data-url' attributes in HTML (see the HTML example below)
-
-// Footer buttons logic with navigateTo
-document.getElementById('catalogue-btn').addEventListener('click', function() {
-    navigateTo('#'); // Replace with actual path to your catalogue
-});
-
-document.getElementById('call-btn').addEventListener('click', function() {
-    window.location.href = 'tel:+917584055356'; // Replace with your actual phone number
-});
-
-document.getElementById('talk-btn').addEventListener('click', function() {
-    navigateTo('#'); // Replace with the actual path
-});
-
-document.getElementById('enquiry-btn').addEventListener('click', function() {
-    navigateTo('#'); // Replace with the actual enquiry page URL
-});
-
-document.getElementById('whatsapp-btn').addEventListener('click', function() {
-    window.location.href = 'https://wa.me/7584055356'; // WhatsApp link
-});
-
     </script>
-    
 </body>
 </html>
