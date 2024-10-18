@@ -55,6 +55,9 @@ header {
     gap: 20px;
     padding: 20px;
     flex-grow: 1;
+    width: 100%; /* Set width to 100% */
+    max-width: 1200px; /* Optional: Set a max-width to prevent excessive stretching */
+    margin: 0 auto; /* Center the grid */
 }
 
 .product {
@@ -81,17 +84,17 @@ header {
     transform: scale(1.05);
 }
 
-/* Responsive adjustments for mobile devices, keeping three columns */
+/* Responsive adjustments for mobile devices */
 @media (max-width: 768px) {
     .product-grid {
-        grid-template-columns: repeat(3, 1fr); /* Maintain three columns for tablets */
+        grid-template-columns: repeat(3, 1fr); /* Two columns for tablets */
         padding: 10px; /* Reduce padding for smaller screens */
     }
 }
 
 @media (max-width: 480px) {
     .product-grid {
-        grid-template-columns: repeat(3, 1fr); /* Still three columns for mobile */
+        grid-template-columns: repeat(1, 1fr); /* Single column for mobile */
         padding: 5px; /* Further reduce padding */
     }
 }
@@ -128,6 +131,7 @@ footer {
 .footer-btn:active {
     transform: scale(1.2);
 }
+
 </style>
 
 </head>
