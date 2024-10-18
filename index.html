@@ -9,7 +9,7 @@
 
     <title>Enquiry - PHSPL</title>
 <style>
-    * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -81,56 +81,53 @@ header {
     transform: scale(1.05);
 }
 
-
-/* Responsive adjustments for mobile devices, keeping three columns */
+/* Responsive adjustments for mobile devices */
 @media (max-width: 768px) {
     .product-grid {
-        grid-template-columns: repeat(3, 1fr); /* Maintain three columns for tablets */
+        grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
         padding: 10px; /* Reduce padding for smaller screens */
     }
 }
 
 @media (max-width: 480px) {
     .product-grid {
-        grid-template-columns: repeat(3, 1fr); /* Still three columns for mobile */
+        grid-template-columns: repeat(1, 1fr); /* Single column for mobile */
         padding: 5px; /* Further reduce padding */
     }
 }
 
-
 footer {
-            background-color: #007bff;
-            display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
+    background-color: #007bff;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
 
-        .footer-btn {
-            background-color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center; /* Align items vertically */
-        }
+.footer-btn {
+    background-color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
 
-        .footer-btn i {
-            margin-right: 5px; /* Space between icon and text */
-        }
+.footer-btn i {
+    margin-right: 5px; /* Space between icon and text */
+}
 
-        .footer-btn:hover {
-            transform: scale(1.1);
-        }
+.footer-btn:hover {
+    transform: scale(1.1);
+}
 
-        .footer-btn:active {
-            transform: scale(1.2);
-        }
-
+.footer-btn:active {
+    transform: scale(1.2);
+}
 </style>
 
 </head>
