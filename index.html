@@ -81,17 +81,17 @@ header {
     transform: scale(1.05);
 }
 
-/* Responsive adjustments for mobile devices */
+/* Responsive adjustments for mobile devices, keeping three columns */
 @media (max-width: 768px) {
     .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+        grid-template-columns: repeat(3, 1fr); /* Maintain three columns for tablets */
         padding: 10px; /* Reduce padding for smaller screens */
     }
 }
 
 @media (max-width: 480px) {
     .product-grid {
-        grid-template-columns: repeat(1, 1fr); /* Single column for mobile */
+        grid-template-columns: repeat(3, 1fr); /* Still three columns for mobile */
         padding: 5px; /* Further reduce padding */
     }
 }
