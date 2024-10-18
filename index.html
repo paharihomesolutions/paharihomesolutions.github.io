@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <title>Product Enquiry - PHSPL</title>
+    <title>Enquiry - PHSPL</title>
     <style>
         * {
             margin: 0;
@@ -23,12 +23,21 @@
         }
 
         header {
-            text-align: center;
-            background: linear-gradient(45deg, #007bff, #6610f2);
-            color: white;
-            padding: 20px 0;
-        }
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #068e3c, #068e3c);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+header a.logo {
+    text-decoration: none;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+}
         .header-logo h1 {
             font-size: 2.5rem;
         }
@@ -49,16 +58,16 @@
         }
 
         .product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Always three columns */
-    gap: 10px 20px; /* Set vertical gap to 10px and horizontal gap to 20px */
-    padding: 20px;
-    flex-grow: 1;
-    width: 100%;
-    max-width: 1200px; /* Optional: Set a max-width */
-    margin: 0 auto; /* Center the grid */
-    overflow: hidden; /* Prevent overflow */
-}
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Always three columns */
+            gap: 10px 20px; /* Set vertical gap to 10px and horizontal gap to 20px */
+            padding: 20px;
+            flex-grow: 1;
+            width: 100%;
+            max-width: 1200px; /* Optional: Set a max-width */
+            margin: 0 auto; /* Center the grid */
+            overflow: hidden; /* Prevent overflow */
+        }
 
 
         .product {
@@ -86,6 +95,7 @@
         }
 
         footer {
+            background-color: #e5e5e5;
             display: flex;
             justify-content: space-around;
             padding: 10px 0;
@@ -95,15 +105,19 @@
         }
 
         .footer-btn {
-            background-color: #6610f2;
+            display: flex;
+            align-items: center; /* Center items vertically */
+            justify-content: center; /* Center items horizontally */
+            background-color: #068e3c;
             border: none;
             padding: 10px;
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center; /* Align items vertically */
+            text-decoration: none; /* Remove underline from links */
+            color: white; /* Change text color if needed */
         }
+
 
         .footer-btn i {
             margin-right: 5px; /* Space between icon and text */
@@ -112,6 +126,11 @@
         .footer-btn:hover {
             transform: scale(1.1);
         }
+        /* Add hover effect as a class */
+.footer-btn.hover-effect {
+    transform: scale(1.1); /* Simulate the hover effect */
+}
+
 
         .footer-btn:active {
             transform: scale(1.2);
@@ -135,12 +154,12 @@
         }
     </style>
 </head>
-<body>
 
+<body>
     <section class="product-grid" style="padding-bottom: 80px;">
         <!-- TMT BARS -->
         <div class="product-item">
-            <a href="tmt-bars/tata-tisocn-550-sd-tmt-bars/" style="text-decoration: none; color: inherit;">
+            <a href="tmt-bars/" style="text-decoration: none; color: inherit;">
                 <div class="product">
                     <img src="https://images.jdmagicbox.com/quickquotes/images_main/20mm-tata-tiscon-tmt-steel-bars-2217651430-0orjw9se.png" alt="TMT Bars">
                     <p>TMT BARS</p>
@@ -150,7 +169,7 @@
     
         <!-- CEMENT -->
         <div class="product-item">
-            <a href="/cement" style="text-decoration: none; color: inherit;">
+            <a href="cement/" style="text-decoration: none; color: inherit;">
                 <div class="product">
                     <img src="https://atlas-content-cdn.pixelsquid.com/stock-images/cement-bags-bag-YexG6P7-600.jpg" alt="Cement">
                     <p>CEMENT</p>
@@ -160,7 +179,7 @@
     
         <!-- PAINTS -->
         <div class="product-item">
-            <a href="/paints" style="text-decoration: none; color: inherit;">
+            <a href="paints/" style="text-decoration: none; color: inherit;">
                 <div class="product">
                     <img src="https://www.freeiconspng.com/thumbs/paints-png/paints-png-7.png" alt="Paints">
                     <p>PAINTS</p>
@@ -168,22 +187,32 @@
             </a>
         </div>
     
-        <!-- TILES AND MARBLES -->
+        <!-- TILES-->
         <div class="product-item">
-            <a href="/tiles" style="text-decoration: none; color: inherit;">
+            <a href="tiles/" style="text-decoration: none; color: inherit;">
                 <div class="product">
                     <img src="https://images.jdmagicbox.com/quickquotes/images_main/-65dhto9a.png" alt="Tiles">
                     <p>TILES</p>
                 </div>
             </a>
         </div>
+
+        <!--MARBLES -->
+        <div class="product-item">
+            <a href="marbles/" style="text-decoration: none; color: inherit;">
+                <div class="product">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2023/9/348808672/WU/TQ/ZV/32556770/natural-marble-stone.png" alt="Tiles">
+                    <p>MARBLES</p>
+                </div>
+            </a>
+        </div>
     
-        <!-- ANGLES AND CHANNELS -->
+        <!--CHANNELS -->
         <div class="product-item">
             <a href="/angles-channels" style="text-decoration: none; color: inherit;">
                 <div class="product">
                     <img src="https://5.imimg.com/data5/SELLER/Default/2024/3/402379439/KC/GR/JE/30602703/ms-channel-500x500.png" alt="Angles and Channels">
-                    <p>ANGLE</p>
+                    <p>ANGLE & CHANNELS</p>
                 </div>
             </a>
         </div>
@@ -193,7 +222,7 @@
             <a href="/roofing-sheets" style="text-decoration: none; color: inherit;">
                 <div class="product">
                     <img src="https://tkstraders.com/wp-content/uploads/2019/06/Metal-roof-Corrugated-galvanised-iron-Zinc-aluminium.png" alt="Roofing Sheets">
-                    <p>SHEETS</p>
+                    <p>ROOFING SHEETS</p>
                 </div>
             </a>
         </div>
@@ -223,30 +252,54 @@
             <a href="/sanitarywares" style="text-decoration: none; color: inherit;">
                 <div class="product">
                     <img src="https://5.imimg.com/data5/RL/LI/MY-22852607/sanitary-ware-500x500.jpg" alt="Sanitarywares">
-                    <p>SANITARY</p>
+                    <p>SANITARYWARES</p>
                 </div>
             </a>
         </div>
     </section>
 
     <footer>
-        <button class="footer-btn" id="catalogue-btn">
+        <a href="/assets/PHSPL.pdf" class="footer-btn" id="catalogue-btn">
             <img src="https://img.icons8.com/material-outlined/24/ffffff/book.png" alt="Catalog" />
-        </button>
-        <button class="footer-btn" id="call-btn">
+        </a>
+        <a href="tel:+917584055356" class="footer-btn" id="call-btn">
             <img src="https://img.icons8.com/material-outlined/24/ffffff/phone.png" alt="Call" />
-        </button>
-        <button class="footer-btn" id="talk-btn">
+        </a>
+        <a href="https://maps.app.goo.gl/u2zGhYADq5m5NNMM7" class="footer-btn" id="talk-btn">
             <img src="https://img.icons8.com/material-outlined/24/ffffff/chat.png" alt="Talk to Expert" />
-            Talk to Expert
-        </button>
-        <button class="footer-btn" id="whatsapp-btn">
+            <span style="margin-top: 5px;">Talk to Expert</span>
+        </a>
+        <a href="https://wa.me/7584055356" class="footer-btn" id="whatsapp-btn">
             <img src="https://img.icons8.com/material-outlined/24/ffffff/whatsapp.png" alt="WhatsApp" />
-        </button>
-        <button class="footer-btn" id="website-btn">
+        </a>
+        <a href="/" class="footer-btn" id="website-btn">
             <img src="https://img.icons8.com/material-outlined/24/ffffff/internet.png" alt="Website" />
-        </button>
+        </a>
     </footer>
+
+    <script>
+        // Get all the footer buttons
+        const footerButtons = document.querySelectorAll('.footer-btn');
+        let currentIndex = 0;
+    
+        // Function to add hover effect
+        function addHoverEffect() {
+            // Remove the hover effect from all buttons
+            footerButtons.forEach(button => button.classList.remove('hover-effect'));
+    
+            // Add the hover effect to the current button
+            footerButtons[currentIndex].classList.add('hover-effect');
+    
+            // Move to the next button
+            currentIndex = (currentIndex + 1) % footerButtons.length;
+        }
+    
+        // Set an interval to rotate the hover effect every 2 seconds (2000ms)
+        setInterval(addHoverEffect, 2000);
+    
+        // Initially trigger the hover effect on the first button
+        addHoverEffect();
+    </script>
     
 </body>
 </html>
