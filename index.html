@@ -117,6 +117,21 @@
             transform: scale(1.2);
         }
 
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr); /* Maintain three columns */
+            }
+
+            .product {
+                padding: 10px; /* Reduce padding on products */
+            }
+
+            .product img {
+                width: 80px; /* Adjust image size for better fit */
+                height: 80px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -129,7 +144,7 @@
         </div>
     </header>
 
-    <section class="product-grid" style="padding-bottom: 80px; padding-right: 100px;">
+    <section class="product-grid" style="padding-bottom: 80px;">
         <!-- TMT BARS -->
         <div class="product-item">
             <a href="tmt-bars/tata-tisocn-550-sd-tmt-bars/" style="text-decoration: none; color: inherit;">
@@ -231,23 +246,9 @@
         <button class="footer-btn" id="talk-btn">
             <i class="fas fa-comments"></i> Talk to Expert
         </button>
-        <button class="footer-btn" id="enquiry-btn">
-            <i class="fas fa-envelope"></i> Enquiry
-        </button>
         <button class="footer-btn" id="whatsapp-btn">
             <i class="fab fa-whatsapp"></i> WhatsApp
         </button>
     </footer>
-
-    <script>
-        // JS for button click animations
-        const footerButtons = document.querySelectorAll('.footer-btn');
-
-        footerButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                alert(`You clicked the ${button.innerText} button!`);
-            });
-        });
-    </script>
 </body>
 </html>
