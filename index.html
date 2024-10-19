@@ -1,305 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <title>Enquiry - PHSPL</title>
+    <title>Shopping Cart with Image Grid</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
         body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background-color: #f4f4f4;
-        }
-
-        header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(45deg, #068e3c, #068e3c);
-    color: white;
-    padding: 20px 0;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-header a.logo {
-    text-decoration: none;
-    color: white;
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-align: center;
-}
-        .header-logo h1 {
-            font-size: 2.5rem;
-        }
-
-        .header-title h2 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .header-title p {
-            margin-bottom: 10px;
-        }
-
-        .header-title .view-more {
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Always three columns */
-            gap: 10px 20px; /* Set vertical gap to 10px and horizontal gap to 20px */
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
             padding: 20px;
-            flex-grow: 1;
-            width: 100%;
-            max-width: 1200px; /* Optional: Set a max-width */
-            margin: 0 auto; /* Center the grid */
-            overflow: hidden; /* Prevent overflow */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
 
-
-        .product {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        .image-gallery {
             text-align: center;
-            padding: 15px;
-            transition: transform 0.3s ease;
-            cursor: pointer;
         }
 
-        .product img {
-            width: 100px; /* Keep the size consistent */
+        .large-image img {
+            width: 500px;
+            height: 500px;
+            border: 2px solid #2b00ff;
+            margin-bottom: 20px;
+            transition: 0.3s ease-in-out;
+            border-radius: 8px;
+        }
+
+        .thumbnail-grid {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .thumbnail {
+            width: 100px;
             height: 100px;
-            margin-bottom: 10px;
-        }
-
-        .product p {
-            font-size: 1rem;
-        }
-
-        .product:hover {
-            transform: scale(1.05);
-        }
-
-        footer {
-            background-color: #e5e5e5;
-            display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-
-        .footer-btn {
-            display: flex;
-            align-items: center; /* Center items vertically */
-            justify-content: center; /* Center items horizontally */
-            background-color: #068e3c;
-            border: none;
-            padding: 10px;
-            border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none; /* Remove underline from links */
-            color: white; /* Change text color if needed */
+            border: 2px solid #ccc;
+            transition: transform 0.2s;
+            object-fit: cover;
+            border-radius: 8px;
         }
 
-
-        .footer-btn i {
-            margin-right: 5px; /* Space between icon and text */
-        }
-
-        .footer-btn:hover {
+        .thumbnail:hover {
             transform: scale(1.1);
         }
-        /* Add hover effect as a class */
-.footer-btn.hover-effect {
-    transform: scale(1.1); /* Simulate the hover effect */
-}
 
-
-        .footer-btn:active {
-            transform: scale(1.2);
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            .product-grid {
-                grid-template-columns: repeat(2, 1fr); /* Adjust to two columns for mobile */
-                gap: 5px; /* Set a smaller gap for mobile */
-            }
+        h1 {
+            text-align: center;
+        }
 
-            .product {
-                padding: 10px; /* Reduce padding on products */
-            }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
 
-            .product img {
-                width: 80px; /* Adjust image size for better fit */
-                height: 80px;
-            }
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        input[type="number"] {
+            width: 60px;
+        }
+
+        .total {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .user-info {
+            margin-top: 20px;
+        }
+
+        .user-info label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .user-info input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
     </style>
 </head>
 
 <body>
-    <section class="product-grid" style="padding-bottom: 80px;">
-        <!-- TMT BARS -->
-        <div class="product-item">
-            <a href="tmt-bars/" style="text-decoration: none; color: inherit;">
-                <div class="product">
-                    <img src="https://images.jdmagicbox.com/quickquotes/images_main/20mm-tata-tiscon-tmt-steel-bars-2217651430-0orjw9se.png" alt="TMT Bars">
-                    <p>TMT BARS</p>
-                </div>
-            </a>
-        </div>
-    
-        <!-- CEMENT -->
-        <div class="product-item">
-            <a href="cement/" style="text-decoration: none; color: inherit;">
-                <div class="product">
-                    <img src="https://atlas-content-cdn.pixelsquid.com/stock-images/cement-bags-bag-YexG6P7-600.jpg" alt="Cement">
-                    <p>CEMENT</p>
-                </div>
-            </a>
-        </div>
-    
-        <!-- PAINTS -->
-        <div class="product-item">
-            <a href="paints/" style="text-decoration: none; color: inherit;">
-                <div class="product">
-                    <img src="https://www.freeiconspng.com/thumbs/paints-png/paints-png-7.png" alt="Paints">
-                    <p>PAINTS</p>
-                </div>
-            </a>
-        </div>
-    
-        <!-- TILES-->
-        <div class="product-item">
-            <a href="tiles/" style="text-decoration: none; color: inherit;">
-                <div class="product">
-                    <img src="https://images.jdmagicbox.com/quickquotes/images_main/-65dhto9a.png" alt="Tiles">
-                    <p>TILES</p>
-                </div>
-            </a>
+
+    <div class="image-gallery">
+        <div class="large-image">
+            <img id="mainImage" src="https://5.imimg.com/data5/SELLER/Default/2022/2/JS/GD/NW/8433109/16-mm-tata-tmt-bar.jpeg" alt="Large Display">
         </div>
 
-        <!--MARBLES -->
-        <div class="product-item">
-            <a href="marbles/" style="text-decoration: none; color: inherit;">
-                <div class="product">
-                    <img src="https://5.imimg.com/data5/SELLER/Default/2023/9/348808672/WU/TQ/ZV/32556770/natural-marble-stone.png" alt="Tiles">
-                    <p>MARBLES</p>
-                </div>
-            </a>
+        <div class="thumbnail-grid">
+            <img class="thumbnail" src="https://5.imimg.com/data5/SELLER/Default/2022/2/JS/GD/NW/8433109/16-mm-tata-tmt-bar.jpeg" alt="Thumbnail 1" onclick="changeImage('https://5.imimg.com/data5/SELLER/Default/2022/2/JS/GD/NW/8433109/16-mm-tata-tmt-bar.jpeg')">
+            <img class="thumbnail" src="https://5.imimg.com/data5/SELLER/Default/2023/9/343524711/GV/KG/BX/64000106/25mm-tata-tiscon-sd-rebar-250x250.jpg" alt="Thumbnail 2" onclick="changeImage('https://5.imimg.com/data5/SELLER/Default/2023/9/343524711/GV/KG/BX/64000106/25mm-tata-tiscon-sd-rebar-250x250.jpg')">
+            <img class="thumbnail" src="https://5.imimg.com/data5/SELLER/Default/2024/9/452081334/GR/SC/WY/81057003/6-mm-tata-tiscon-tmt-bar-500x500.jpg" alt="Thumbnail 3" onclick="changeImage('https://5.imimg.com/data5/SELLER/Default/2024/9/452081334/GR/SC/WY/81057003/6-mm-tata-tiscon-tmt-bar-500x500.jpg')">
+            <img class="thumbnail" src="https://5.imimg.com/data5/SELLER/Default/2023/4/303548727/LN/KN/BK/188717185/tata-tiscon-tmt-bar-500x500.jpg" alt="Thumbnail 4" onclick="changeImage('https://5.imimg.com/data5/SELLER/Default/2023/4/303548727/LN/KN/BK/188717185/tata-tiscon-tmt-bar-500x500.jpg')">
         </div>
-    
-        <!--CHANNELS -->
-        <div class="product-item">
-            <a href="/angles-channels" style="text-decoration: none; color: inherit;">
-                <div class="product">
-                    <img src="https://5.imimg.com/data5/SELLER/Default/2024/3/402379439/KC/GR/JE/30602703/ms-channel-500x500.png" alt="Angles and Channels">
-                    <p>ANGLE & CHANNELS</p>
-                </div>
-            </a>
-        </div>
-    
-        <!-- ROOFING SHEETS -->
-        <div class="product-item">
-            <a href="/roofing-sheets" style="text-decoration: none; color: inherit;">
-                <div class="product">
-                    <img src="https://tkstraders.com/wp-content/uploads/2019/06/Metal-roof-Corrugated-galvanised-iron-Zinc-aluminium.png" alt="Roofing Sheets">
-                    <p>ROOFING SHEETS</p>
-                </div>
-            </a>
-        </div>
-    
-        <!-- DOORS -->
-        <div class="product-item">
-            <a href="/doors" style="text-decoration: none; color: inherit;">
-                <div class="product">
-                    <img src="https://png.pngtree.com/png-clipart/20220731/ourmid/pngtree-wooden-door-png-image_6093732.png" alt="Doors">
-                    <p>DOORS</p>
-                </div>
-            </a>
-        </div>
-    
-        <!-- WINDOWS -->
-        <div class="product-item">
-            <a href="/windows" style="text-decoration: none; color: inherit;">
-                <div class="product">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhJ_AHFuigOhDmr77DWBTZ6je_EjSI-ztvGTM07p-HG0aHJKBLFPleoItq8ZUU5pjjvC0&usqp=CAU" alt="Windows">
-                    <p>WINDOWS</p>
-                </div>
-            </a>
-        </div>
-    
-        <!-- SANITARYWARES -->
-        <div class="product-item">
-            <a href="/sanitarywares" style="text-decoration: none; color: inherit;">
-                <div class="product">
-                    <img src="https://5.imimg.com/data5/RL/LI/MY-22852607/sanitary-ware-500x500.jpg" alt="Sanitarywares">
-                    <p>SANITARYWARES</p>
-                </div>
-            </a>
-        </div>
-    </section>
+    </div>
 
-    <footer>
-        <a href="/assets/PHSPL.pdf" class="footer-btn" id="catalogue-btn">
-            <img src="https://img.icons8.com/material-outlined/24/ffffff/book.png" alt="Catalog" />
-        </a>
-        <a href="tel:+917584055356" class="footer-btn" id="call-btn">
-            <img src="https://img.icons8.com/material-outlined/24/ffffff/phone.png" alt="Call" />
-        </a>
-        <a href="https://maps.app.goo.gl/u2zGhYADq5m5NNMM7" class="footer-btn" id="talk-btn">
-            <img src="https://img.icons8.com/material-outlined/24/ffffff/chat.png" alt="Talk to Expert" />
-            <span style="margin-top: 5px;">Talk to Expert</span>
-        </a>
-        <a href="https://wa.me/7584055356" class="footer-btn" id="whatsapp-btn">
-            <img src="https://img.icons8.com/material-outlined/24/ffffff/whatsapp.png" alt="WhatsApp" />
-        </a>
-        <a href="/" class="footer-btn" id="website-btn">
-            <img src="https://img.icons8.com/material-outlined/24/ffffff/internet.png" alt="Website" />
-        </a>
-    </footer>
+    <br><br><br>
+
+    <div class="container">
+        <h1>Shopping Cart</h1>
+        <table id="cart">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Rate / Piece</th>
+                    <th>Rate / Ton</th>
+                    <th>Unit</th>
+                    <th>Enter Qty</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>8 MM</td>
+                    <td class="rate-piece">321.19</td>
+                    <td class="rate-ton">321190</td>
+                    <td>
+                        <select class="unit" onchange="calculateAmount()">
+                            <option value="piece">Piece</option>
+                            <option value="ton">Ton</option>
+                        </select>
+                    </td>
+                    <td><input type="number" min="0" class="qty" value="0" onchange="calculateAmount()"></td>
+                    <td class="amount">0.00</td>
+                </tr>
+                <tr>
+                    <td>10 MM</td>
+                    <td class="rate-piece">488.98</td>
+                    <td class="rate-ton">488980</td>
+                    <td>
+                        <select class="unit" onchange="calculateAmount()">
+                            <option value="piece">Piece</option>
+                            <option value="ton">Ton</option>
+                        </select>
+                    </td>
+                    <td><input type="number" min="0" class="qty" value="0" onchange="calculateAmount()"></td>
+                    <td class="amount">0.00</td>
+                </tr>
+                <tr>
+                    <td>12 MM</td>
+                    <td class="rate-piece">689.83</td>
+                    <td class="rate-ton">689830</td>
+                    <td>
+                        <select class="unit" onchange="calculateAmount()">
+                            <option value="piece">Piece</option>
+                            <option value="ton">Ton</option>
+                        </select>
+                    </td>
+                    <td><input type="number" min="0" class="qty" value="0" onchange="calculateAmount()"></td>
+                    <td class="amount">0.00</td>
+                </tr>
+                <tr>
+                    <td>16 MM</td>
+                    <td class="rate-piece">1227.97</td>
+                    <td class="rate-ton">1227970</td>
+                    <td>
+                        <select class="unit" onchange="calculateAmount()">
+                            <option value="piece">Piece</option>
+                            <option value="ton">Ton</option>
+                        </select>
+                    </td>
+                    <td><input type="number" min="0" class="qty" value="0" onchange="calculateAmount()"></td>
+                    <td class="amount">0.00</td>
+                </tr>
+                <tr>
+                    <td>20 MM</td>
+                    <td class="rate-piece">1919.49</td>
+                    <td class="rate-ton">1919490</td>
+                    <td>
+                        <select class="unit" onchange="calculateAmount()">
+                            <option value="piece">Piece</option>
+                            <option value="ton">Ton</option>
+                        </select>
+                    </td>
+                    <td><input type="number" min="0" class="qty" value="0" onchange="calculateAmount()"></td>
+                    <td class="amount">0.00</td>
+                </tr>
+                <tr>
+                    <td>25 MM</td>
+                    <td class="rate-piece">2856.87</td>
+                    <td class="rate-ton">2856870</td>
+                    <td>
+                        <select class="unit" onchange="calculateAmount()">
+                            <option value="piece">Piece</option>
+                            <option value="ton">Ton</option>
+                        </select>
+                    </td>
+                    <td><input type="number" min="0" class="qty" value="0" onchange="calculateAmount()"></td>
+                    <td class="amount">0.00</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="total">
+            <strong>Grand Total: ₹<span id="grandTotal">0.00</span></strong>
+        </div>
+
+        <div class="user-info">
+            <h3>User Information</h3>
+            <form id="userForm" onsubmit="sendToWhatsApp(); return false;">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" required>
+
+                <label for="pincode">Pincode:</label>
+                <input type="text" id="pincode" required>
+
+                <button type="submit">Send to WhatsApp</button>
+            </form>
+        </div>
+    </div>
 
     <script>
-        // Get all the footer buttons
-        const footerButtons = document.querySelectorAll('.footer-btn');
-        let currentIndex = 0;
-    
-        // Function to add hover effect
-        function addHoverEffect() {
-            // Remove the hover effect from all buttons
-            footerButtons.forEach(button => button.classList.remove('hover-effect'));
-    
-            // Add the hover effect to the current button
-            footerButtons[currentIndex].classList.add('hover-effect');
-    
-            // Move to the next button
-            currentIndex = (currentIndex + 1) % footerButtons.length;
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
         }
-    
-        // Set an interval to rotate the hover effect every 2 seconds (2000ms)
-        setInterval(addHoverEffect, 2000);
-    
-        // Initially trigger the hover effect on the first button
-        addHoverEffect();
+
+        function calculateAmount() {
+    const rows = document.querySelectorAll('#cart tbody tr');
+    let grandTotal = 0;
+
+    rows.forEach(row => {
+        const ratePiece = parseFloat(row.querySelector('.rate-piece').textContent);
+        const rateTon = parseFloat(row.querySelector('.rate-ton').textContent);
+        const qty = parseFloat(row.querySelector('.qty').value) || 0;
+        const unit = row.querySelector('.unit').value;
+
+        let amount;
+        if (unit === 'piece') {
+            amount = qty * ratePiece;
+        } else {
+            amount = qty * rateTon; // Corrected this line to use the rate per ton directly
+        }
+
+        row.querySelector('.amount').textContent = amount.toFixed(2);
+        grandTotal += amount;
+    });
+
+    document.getElementById('grandTotal').textContent = grandTotal.toFixed(2);
+}
+
+
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const pincode = document.getElementById('pincode').value;
+            const rows = document.querySelectorAll('#cart tbody tr');
+            let message = `Name: ${name}\nPhone: ${phone}\nPincode: ${pincode}\n\nItems:\n`;
+
+            rows.forEach(row => {
+                const item = row.cells[0].textContent;
+                const qty = row.querySelector('.qty').value;
+                const amount = row.querySelector('.amount').textContent;
+
+                if (qty > 0) {
+                    message += `${item}: Qty ${qty}, Amount ₹${amount}\n`;
+                }
+            });
+
+            const grandTotal = document.getElementById('grandTotal').textContent;
+            message += `\nGrand Total: ₹${grandTotal}`;
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=9474088566&text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
     </script>
-    
+
 </body>
+
 </html>
